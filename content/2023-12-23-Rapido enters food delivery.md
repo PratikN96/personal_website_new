@@ -1,7 +1,7 @@
 ---
 layout: modified_post
-title:  "Rapido enters food delivery"
-date:   2025-05-06 01:21:23 +0530
+title:  Rapido enters food delivery
+date:   2025-05-06 
 categories: jekyll update
 permalink: /:title
 Date: 06-05-2025

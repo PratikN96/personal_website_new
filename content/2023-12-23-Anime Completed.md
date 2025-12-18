@@ -4,7 +4,6 @@ title:  Anime Completed
 date:   2022-09-22
 
 
-Date: 12-09-2022
 ---
 
 I love watching anime, reading mangas and lately started reading light novels. 

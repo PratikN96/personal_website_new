@@ -1,7 +1,7 @@
 ---
 layout: modified_post
-title:  "Why Cred have non-monetised products?"
-date:   2025-01-03 01:21:23 +0530
+title:  Why Cred have non-monetised products?
+date:   2025-01-03 
 categories: jekyll update
 permalink:  /:title
 Date: 03-01-2025

@@ -1,7 +1,7 @@
 ---
 layout: modified_post
-title:  "Learnings from HiddenKemp: Failed at pilot stage"
-date:   2021-09-20 01:21:23 +0530
+title:  Learnings from HiddenKemp Failed at pilot stage
+date:   2021-09-20 
 categories: jekyll update
 permalink: /:title
 Date: 20-09-2021

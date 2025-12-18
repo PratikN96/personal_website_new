@@ -1,7 +1,7 @@
 ---
 layout: modified_post
-title:  "Why CRED coins are useless?"
-date:   2023-09-06 01:21:23 +0530
+title:  Why CRED coins are useless?
+date:   2023-09-06 
 categories: jekyll update
 permalink: /:title
 Date: 06-09-2023

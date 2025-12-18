@@ -1,7 +1,7 @@
 ---
 layout: modified_post
-title:  "South Korea: Miracle on the Han River"
-date:   2018-03-08 01:21:23 +0530
+title:  South Korea: Miracle on the Han River
+date:   2018-03-08 
 categories: jekyll update
 permalink: /:title
 Date: 08-03-2018

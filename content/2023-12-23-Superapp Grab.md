@@ -1,7 +1,7 @@
 ---
 layout: modified_post
-title:  "Superapp Grab"
-date:   2022-03-17 01:21:23 +0530
+title:  Superapp Grab
+date:   2022-03-17 
 categories: jekyll update
 permalink: /:title
 Date: 17-03-2022

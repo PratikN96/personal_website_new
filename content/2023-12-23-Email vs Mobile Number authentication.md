@@ -1,7 +1,7 @@
 ---
 layout: modified_post
-title:  "Email vs Mobile Number authentication"
-date:   2024-05-09 01:21:23 +0530
+title:  Email vs Mobile Number authentication
+date:   2024-05-09 
 categories: jekyll update
 permalink: /:title
 Date: 09-05-2024

@@ -1,7 +1,7 @@
 ---
 layout: modified_post
-title:  "Spenny Product Critique"
-date:   2021-09-25 01:21:23 +0530
+title:  Spenny Product Critique
+date:   2021-09-25 
 categories: jekyll update
 permalink: /:title
 Date: 25-09-2021

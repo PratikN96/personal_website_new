@@ -1,10 +1,8 @@
 ---
 layout: modified_post
 title:  Commercialization of land | A solution to China’s housing boom
-date:   2017-11-27 01:21:23 +0530
-categories: jekyll update
-permalink: /:title
-Date: 27-11-2017
+date:   2017-11-27 
+
 ---
 
 The housing boom in China aftermath the 2008 global financial crises is speculated to bring another turmoil in global economy. 

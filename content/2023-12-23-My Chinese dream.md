@@ -1,7 +1,7 @@
 ---
 layout: modified_post
-title:  "My Chinese dream"
-date:   2018-01-01 01:21:23 +0530
+title:  My Chinese dream
+date:   2018-01-01 
 categories: jekyll update
 permalink: /:title
 Date: 01-01-2018

@@ -1,7 +1,7 @@
 ---
 layout: modified_post
-title:  "When segmentation fails to explain behavior"
-date:   2025-01-10 01:21:23 +0530
+title:  When segmentation fails to explain behavior
+date:   2025-01-10 
 categories: jekyll update
 permalink:  /:title
 Date: 10-01-2025

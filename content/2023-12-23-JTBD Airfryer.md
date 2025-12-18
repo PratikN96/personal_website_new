@@ -1,7 +1,7 @@
 ---
 layout: modified_post
-title:  "JTBD Airfryer"
-date:   2024-12-01 01:21:23 +0530
+title:  JTBD Airfryer
+date:   2024-12-01 
 categories: jekyll update
 permalink: /:title
 Date: 01-12-2024

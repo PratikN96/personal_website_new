@@ -1,7 +1,7 @@
 ---
 layout: modified_post
-title:  "Uncovering fractured travel experience"
-date:   2022-07-27 01:21:23 +0530
+title:  Uncovering fractured travel experience
+date:   2022-07-27 
 categories: jekyll update
 permalink: /:title
 Date: 27-07-2022
