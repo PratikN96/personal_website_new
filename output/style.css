@@ -1,0 +1,203 @@
+/* --- Global Variables --- */
+:root {
+    --primary-font: 'Lato', sans-serif;
+    --text-color: #333;
+    --max-content-width: 800px; /* UNIFIED Max width for all content */
+    --padding-mobile: 1.5rem;
+    --padding-desktop: 2.5rem;
+}
+
+body {
+    font-family: var(--primary-font);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #fff;
+    min-height: 100vh;
+}
+
+/* * --- ALIGNMENT FIX: Header and Main Share Width/Centering ---
+ * This ensures the content blocks are perfectly stacked and aligned.
+ */
+header, main {
+    max-width: var(--max-content-width); 
+    margin: 0 auto; /* Centers the block within the body */
+    padding-left: var(--padding-mobile); /* Horizontal padding */
+    padding-right: var(--padding-mobile); /* Horizontal padding */
+}
+
+/* --- Header & Navigation (Top Bar) --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Vertical padding for header */
+    padding-top: var(--padding-mobile); 
+    padding-bottom: var(--padding-mobile);
+}
+
+.logo {
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-decoration: none; 
+    color: var(--text-color);
+}
+
+.blog-link {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1.1rem;
+}
+
+/* --- Homepage (index.html) Styles --- */
+.homepage-content {
+    /* Override vertical padding set by the general 'main' rule */
+    padding-top: 10vh; 
+    padding-bottom: 10vh;
+}
+
+.homepage-content h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+
+
+.homepage-contact {
+    margin-top: 3rem; 
+}
+
+.homepage-contact a {
+    text-decoration: none;
+    color: var(--text-color);
+    border-bottom: 1px solid var(--text-color);
+    margin-right: 1.5rem;
+    line-height: 2.5; 
+}
+
+/* --- Blog List Page & Individual Post Page --- */
+/* Reset the top padding for non-homepage content */
+main:not(.homepage-content) {
+    padding-top: 3rem; 
+}
+
+#blog-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 0; /* Already accounted for by main padding-top */
+}
+
+#blog-list li {
+    margin-bottom: 2rem;
+}
+
+#blog-list a {
+    text-decoration: none;
+    color: var(--text-color);
+    display: block;
+}
+
+.blog-date {
+    display: block;
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.blog-title {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+
+/* --- Individual Post Styles --- */
+article {
+    padding-top: 1rem; /* Adjust based on the main padding */
+}
+
+article h1 {
+    font-size: 2.0rem;
+    font-weight: 700;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.post-date {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 3rem;
+}
+
+article p, article li {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+article h2, article h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+article hr {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 2rem 0;
+}
+
+/* --- Footer --- */
+footer {
+    display: none; /* Hidden as per the image design */
+}
+
+/* ========================================================== */
+/* --- Desktop / Tablet Styles (Min-width 768px) --- */
+/* ========================================================== */
+@media (min-width: 768px) {
+    
+    /* Header & Main: Increase horizontal padding for desktop */
+    header, main {
+        padding-left: var(--padding-desktop);
+        padding-right: var(--padding-desktop);
+    }
+    
+    /* Header: Adjust vertical padding for desktop */
+    header {
+        padding-top: var(--padding-desktop);
+        padding-bottom: var(--padding-desktop);
+    }
+
+    /* Homepage Adjustments (Larger text for desktop) */
+    .homepage-content {
+        padding-top: 15vh;
+    }
+    
+    .homepage-content h2 {
+        font-size: 3rem; 
+        margin-bottom: 1rem;
+    }
+
+    .homepage-content h2:nth-of-type(2) {
+        font-size: 3rem;
+        margin-bottom: 3rem;
+    }
+
+    /* Post/List Adjustments - Increase top padding for desktop */
+    main:not(.homepage-content) {
+        padding-top: 4rem; 
+    }
+    
+    article h1 {
+        font-size: 3rem;
+    }
+    
+    .blog-title {
+        font-size: 1.7rem;
+    }
+}
