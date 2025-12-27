@@ -141,6 +141,10 @@ export default async (req: Request, context: Context) => {
 
                     // Commit to GitHub
                     const [owner, repo] = GITHUB_REPOSITORY.split("/");
+                    console.log(`Attempting to publish to: ${owner}/${repo} at path: ${filename}`);
+                    if (!owner || !repo) {
+                        throw new Error(`Invalid GITHUB_REPOSITORY format: ${GITHUB_REPOSITORY}`);
+                    }
                     await octokit.repos.createOrUpdateFileContents({
                         owner,
                         repo,
