@@ -1,0 +1,14 @@
+{
+  "name": "personal-website-functions",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "@netlify/functions": "^2.8.2",
+    "grammy": "^1.32.0",
+    "@google/generative-ai": "^0.21.0",
+    "@octokit/rest": "^21.0.2"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2"
+  }
+}
