@@ -1,5 +1,5 @@
 [build]
-  functions = "netlify/functions"
+  functions = "functions"
   command = "pip install -r requirements.txt && python generate_posts.py && python generate_index.py"
   publish = "output"
 
