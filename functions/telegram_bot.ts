@@ -140,6 +140,12 @@ export default async (req: Request, context: Context) => {
                     const filename = `content/${metadata.date}-${slug}.md`;
 
                     // Commit to GitHub
+                    if (!GITHUB_TOKEN) {
+                        console.error("CRITICAL: GITHUB_TOKEN is empty or undefined!");
+                    } else {
+                        console.log("GITHUB_TOKEN is present (length: " + GITHUB_TOKEN.length + ")");
+                    }
+
                     const [owner, repo] = GITHUB_REPOSITORY.split("/");
                     console.log(`Attempting to publish to: ${owner}/${repo} at path: ${filename}`);
                     if (!owner || !repo) {
