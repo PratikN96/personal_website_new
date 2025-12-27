@@ -146,7 +146,14 @@ export default async (req: Request, context: Context) => {
                         console.log("GITHUB_TOKEN is present (length: " + GITHUB_TOKEN.length + ")");
                     }
 
-                    const [owner, repo] = GITHUB_REPOSITORY.split("/");
+                    let [owner, repo] = GITHUB_REPOSITORY.split("/");
+                    if (!repo) {
+                        // If user only provided repo name (e.g. "personal_website_new")
+                        repo = owner;
+                        owner = "PratikN96"; // Default/Fallback owner
+                        console.log(`GITHUB_REPOSITORY missing owner. Defaulting to: ${owner}/${repo}`);
+                    }
+
                     console.log(`Attempting to publish to: ${owner}/${repo} at path: ${filename}`);
                     if (!owner || !repo) {
                         throw new Error(`Invalid GITHUB_REPOSITORY format: ${GITHUB_REPOSITORY}`);
