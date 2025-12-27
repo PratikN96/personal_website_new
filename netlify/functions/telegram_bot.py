@@ -4,25 +4,36 @@ import logging
 import asyncio
 import traceback
 from datetime import datetime
-from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
-from telegram.ext import Application, CommandHandler, MessageHandler, CallbackQueryHandler, ContextTypes, filters
-from telegram.constants import ParseMode
-import google.generativeai as genai
-from github import Github
+
+# Configure logging immediately
+logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+# --- Safe Imports & Debugging ---
+# We try to import dependencies. If they fail, we log it.
+# This helps debug if Netlify actually installed the requirements.
+deps_ok = True
+try:
+    from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
+    from telegram.ext import Application, CommandHandler, MessageHandler, CallbackQueryHandler, ContextTypes, filters
+    from telegram.constants import ParseMode
+    import google.generativeai as genai
+    from github import Github
+except ImportError as e:
+    deps_ok = False
+    logger.error(f"CRITICAL: Dependency check failed. Are requirements.txt installed? Error: {e}")
 
 # --- Configuration ---
 TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
 GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY")
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
-# Assuming the function name is 'telegram_bot' -> webhook should be set to .../telegram_bot
 
-# Set up logging
-logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
-logger = logging.getLogger(__name__)
-
-# Initialize Gemini
-if GOOGLE_API_KEY:
-    genai.configure(api_key=GOOGLE_API_KEY)
+# Initialize Gemini if available
+if deps_ok and GOOGLE_API_KEY:
+    try:
+        genai.configure(api_key=GOOGLE_API_KEY)
+    except Exception as e:
+        logger.error(f"Gemini config error: {e}")
 
 # --- Prompts ---
 IMPROVE_PROMPT = """You are a helpful editor. Improve the following text for clarity, flow, and grammar. 
@@ -232,9 +243,21 @@ async def main(event):
 
 def handler(event, context):
     """Entry point for Netlify Function."""
-    # Netlify/Lambda main handler
-    # Check for POST
+    print("DEBUG: Handler invoked") 
+    print(f"DEBUG: Event Body: {event.get('body', 'No Body')}")
+    
+    # Check dependencies
+    if not deps_ok:
+        print("CRITICAL: Dependencies missing. Returning 200 to stop retry loop but bot is dead.")
+        return {"statusCode": 200, "body": "Dependencies missing"}
+
+    # Check Method
     if event['httpMethod'] != 'POST':
          return {"statusCode": 405, "body": "Method Not Allowed"}
          
-    return asyncio.run(main(event))
+    try:
+        return asyncio.run(main(event))
+    except Exception as e:
+        logger.error(f"Top Level Handler Error: {e}")
+        traceback.print_exc()
+        return {"statusCode": 500, "body": f"Handler Error: {e}"}
